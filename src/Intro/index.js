@@ -47,7 +47,9 @@ class Intro extends Component {
       blinking: true
     });
 
-    this.props.updateGameState(1);
+    setTimeout(() => {
+      this.props.updateGameState(1);
+    }, 1000);
   }
 
   render() {
