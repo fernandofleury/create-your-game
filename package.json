@@ -1,7 +1,7 @@
 {
   "name": "otavios-quest",
   "version": "0.1.0",
-  "homepage": "https://fleury.io/otavios-quest",
+  "homepage": "https://fleury.io/create-your-game",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
