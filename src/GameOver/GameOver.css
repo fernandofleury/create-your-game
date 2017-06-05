@@ -1,0 +1,20 @@
+.game-over {
+  color: red;
+}
+
+.game-over-title {
+  font-size: 12rem;
+  line-height: 14rem;
+  max-width: 50%;
+  text-align: center;
+}
+
+
+
+@media screen and (max-width: 800px) {
+  .game-over-title {
+    font-size: 5rem;
+    line-height: 6rem;
+    max-width: 100%;
+  }
+}

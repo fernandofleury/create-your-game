@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import { func } from 'prop-types';
+import { string, func } from 'prop-types';
 import classnames from 'classnames';
-import introMusic from './intro-music.wav';
-import startMusic from './start-music.wav';
-import './intro.css';
+import introMusic from './IntroMusic.wav';
+import startMusic from './StartMusic.wav';
+import './Intro.css';
 
-class Intro extends Component {
+export default class Intro extends Component {
+  static propTypes = {
+    updateGameState: func,
+    title: string
+  }
+
   constructor(props) {
     super(props);
 
@@ -19,6 +24,8 @@ class Intro extends Component {
 
   componentDidMount() {
     window.addEventListener('keypress', this.onKeyPress);
+
+    document.title = this.props.title;
 
     this.introMusic = new Audio(introMusic);
     this.introMusic.loop = true;
@@ -48,25 +55,20 @@ class Intro extends Component {
     });
 
     setTimeout(() => {
-      this.props.updateGameState(1);
+      this.props.updateGameState({ gameState: 2 });
     }, 1000);
   }
 
   render() {
     const { blinking } = this.state;
-    const startStyles = classnames('intro-start', { blinking });
+    const { title } = this.props;
+    const startStyles = classnames('start-button', { blinking });
 
     return (
-      <div className="intro">
-        <div className="intro-title">OTAVIO'S QUEST</div>
-        <div className={startStyles} onClick={this.onStartClick}>PRESS START (V1)</div>
+      <div className="intro container">
+        <div className="intro-title">{title}</div>
+        <div className={startStyles} onClick={this.onStartClick}>PRESS START (ALPHA)</div>
       </div>
     );
   }
 }
-
-Intro.propTypes = {
-  updateGameState: func
-};
-
-export default Intro;

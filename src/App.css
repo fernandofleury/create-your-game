@@ -2,3 +2,45 @@
   background-color: black;
   height: 100%;
 }
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+@keyframes startSwing {
+  from { transform: translateY(-25%) }
+  to { transform: translateY(25%) }
+}
+
+@keyframes startBlinking {
+  50% { opacity: 0 }
+}
+
+.start-button {
+  animation: startSwing .3s ease-in-out alternate both infinite;
+  background-color: transparent;
+  border: 0;
+  bottom: 4rem;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.5rem;
+  padding: 0;
+  opacity: .8;
+  position: absolute;
+  transition: opacity .3s ease-in-out;
+}
+
+.start-button:hover {
+  opacity: 1;
+}
+.start-button:focus {
+  outline: none;
+}
+
+.start-button.blinking {
+  animation: startBlinking .3s ease-in-out alternate both infinite;
+}

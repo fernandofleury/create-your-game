@@ -1,0 +1,38 @@
+.create-game {
+  color: white;
+  flex-direction: column;
+}
+
+.create-game-title {
+  font-size: 2rem;
+  line-height: 3rem;
+  max-width: 40%;
+  text-align: center;
+}
+
+.create-game-input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: .2rem solid white;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  font-family: inherit;
+  font-size: 2rem;
+  margin-top: 2rem;
+  max-width: 30%;
+  opacity: .5;
+  transition: opacity .3s ease-in-out;
+  width: 100%;
+}
+
+.create-game-input:focus {
+  outline: none;
+  opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .create-game-title, .create-game-input {
+    max-width: 80%;
+  }
+}

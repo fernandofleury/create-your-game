@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { func } from 'prop-types';
-import './game-over.css';
-import gameOver from './game-over.wav';
+import gameOver from './GameOver.wav';
+import './GameOver.css';
 
-class GameOver extends Component {
+export default class GameOver extends Component {
+  static propTypes = {
+    updateGameState: func
+  }
+
   constructor(props) {
     super(props);
 
@@ -33,21 +37,15 @@ class GameOver extends Component {
 
     this.gameOverMusic.pause();
 
-    this.props.updateGameState(0);
+    this.props.updateGameState({ gameState: 1 });
   }
 
   render() {
     return (
-      <div className="game-over">
+      <div className="game-over container">
         <div className="game-over-title">GAME OVER</div>
-        <div className="game-over-start" onClick={this.onStartClick}>TRY AGAIN?</div>
+        <div className="start-button" onClick={this.onStartClick}>TRY AGAIN?</div>
       </div>
     );
   }
 }
-
-GameOver.propTypes = {
-  updateGameState: func
-};
-
-export default GameOver;

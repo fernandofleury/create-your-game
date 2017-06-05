@@ -1,18 +1,5 @@
-@keyframes startSwing {
-  from { transform: translateY(-25%) }
-  to { transform: translateY(25%) }
-}
-
-@keyframes startBlinking {
-  50% { opacity: 0 }
-}
-
 .intro {
-  align-items: center;
   color: white;
-  display: flex;
-  height: 100%;
-  justify-content: center;
 }
 
 .intro-title {
@@ -22,20 +9,10 @@
   text-align: center;
 }
 
-.intro-start {
-  animation: startSwing .3s ease-in-out alternate both infinite;
-  bottom: 4rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  opacity: .8;
-  position: absolute;
-  transition: opacity .3s ease-in-out;
-}
-
-.intro-start:hover {
-  opacity: 1;
-}
-
-.intro-start.blinking {
-  animation: startBlinking .3s ease-in-out alternate both infinite;
+@media screen and (max-width: 800px) {
+  .intro-title {
+    font-size: 3rem;
+    line-height: 4rem;
+    max-width: 100%;
+  }
 }
