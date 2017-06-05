@@ -1,0 +1,10 @@
+<script>
+  (function(){
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect != location.href) {
+      history.replaceState(null, null, redirect);
+    }
+  })();
+</script>
+<meta http-equiv="refresh" content="0;URL='/create-your-game'">
