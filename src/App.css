@@ -11,8 +11,8 @@
 }
 
 @keyframes startSwing {
-  from { transform: translateY(-25%) }
-  to { transform: translateY(25%) }
+  from { transform: translate(-50%, -25%) }
+  to { transform: translate(-50%, 25%) }
 }
 
 @keyframes startBlinking {
@@ -28,6 +28,7 @@
   cursor: pointer;
   font-family: inherit;
   font-size: 1.5rem;
+  left: 50%;
   padding: 0;
   opacity: .8;
   position: absolute;
@@ -43,4 +44,5 @@
 
 .start-button.blinking {
   animation: startBlinking .3s ease-in-out alternate both infinite;
+  transform: translateX(-50%);
 }

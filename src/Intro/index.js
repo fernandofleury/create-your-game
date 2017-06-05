@@ -28,8 +28,11 @@ export default class Intro extends Component {
     document.title = this.props.title;
 
     this.introMusic = new Audio(introMusic);
-    this.introMusic.loop = true;
     this.introMusic.play();
+    this.introMusic.addEventListener('ended', () => {
+      this.introMusic.currentTime = 0;
+      this.introMusic.play();
+    });
 
     this.startMusic = new Audio(startMusic);
   }
